@@ -36,7 +36,7 @@ To test the service-deployment workflow, using a workflow-controller running on 
 $ bodywork workflow \
     --namespace=scoring-service \
     https://github.com/bodywork-ml/scoring-service-project \
-    main
+    master
 ```
 
 The workflow-controller logs will be streamed to your shell's standard output until the service is successfully deployed.
