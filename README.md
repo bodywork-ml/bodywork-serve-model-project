@@ -35,7 +35,7 @@ To test the service-deployment workflow, using a workflow-controller running on 
 ```shell
 $ bodywork workflow \
     --namespace=scoring-service \
-    https://github.com/bodywork-ml/scoring-service-project \
+    https://github.com/bodywork-ml/bodywork-serve-model-project \
     master
 ```
 
