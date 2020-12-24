@@ -2,7 +2,7 @@
 
 ---
 
-# Serve Machine Learning Models on Kubernetes using Bodywork
+# Serve ML Models on Kubernetes using Bodywork
 
 This repository contains a Bodywork project that demonstrates how to deploy a machine learning service on Kubernetes (k8s), with Bodywork. To run this project, follow the steps below.
 
