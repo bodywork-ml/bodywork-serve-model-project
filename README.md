@@ -25,7 +25,7 @@ $ pip install bodywork
 ## Setup a Kubernetes Namespace for use with Bodywork
 
 ```shell
-$ bodywork setup-namespace bodywork-serve-model
+$ bodywork setup-namespace scoring-service
 ```
 
 ## Deploy the Service
@@ -34,14 +34,14 @@ To test the service-deployment workflow, using a workflow-controller running on 
 
 ```shell
 $ bodywork workflow \
-    --namespace=bodywork-serve-model \
-    https://github.com/bodywork-ml/bodywork-serve-model-project \
+    --namespace=scoring-service \
+    https://github.com/bodywork-ml/scoring-service-project \
     main
 ```
 
 The workflow-controller logs will be streamed to your shell's standard output until the service is successfully deployed.
 
-## Test the Service
+## Testing the Service
 
 Service deployments are accessible via HTTP from within the cluster - they are not exposed to the public internet. To test a service from your local machine you will first of all need to start a proxy server to enable access to your cluster. This can be achieved by issuing the following command,
 
@@ -52,10 +52,10 @@ $ kubectl proxy
 Then in a new shell, you can use the curl tool to test the service. For example,
 
 ```shell
-$ curl http://localhost:8001/api/v1/namespaces/bodywork-serve-model/services/bodywork-serve-model--scoring-service/proxy \
+$ curl http://localhost:8001/api/v1/namespaces/scoring-service/services/bodywork-serve-model-project--scoring-service/proxy/iris/v1/score \
     --request POST \
     --header "Content-Type: application/json" \
-    --data '{"x": 5.1, "y": 3.5}'
+    --data '{"sepal_length": 5.1, "sepal_width": 3.5, "petal_length": 1.4, "petal_width": 0.2}'
 ```
 
 Should return,
@@ -68,12 +68,12 @@ Should return,
 }
 ```
 
-According to how the payload has been defined in the `serve-model/serve.py` module.
+According to how the payload has been defined in the `scoring-service/serve.py` module.
 
 ## Cleaning Up
 
 To clean-up the deployment in its entirety, delete the namespace using kubectl - e.g. by running,
 
 ```shell
-$ kubectl delete ns bodywork-serve-model
+$ kubectl delete ns scoring-service
 ```
