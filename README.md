@@ -77,3 +77,9 @@ To clean-up the deployment in its entirety, delete the namespace using kubectl -
 ```shell
 $ kubectl delete ns scoring-service
 ```
+
+## Make this Project Your Own
+
+This repository is a [GitHub template repository](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) that can be automatically copied into your own GitHub account by clicking the `Use this template` button above.
+
+After you've cloned the template project, use official [Bodywork documentation](https://bodywork.readthedocs.io/en/latest/) to help modify the project to meet your own requirements.
