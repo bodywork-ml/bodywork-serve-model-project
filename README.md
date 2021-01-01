@@ -1,4 +1,4 @@
-![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/website_logo_transparent_background.png)
+![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/serve_model.png)
 
 ---
 
