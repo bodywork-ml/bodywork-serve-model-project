@@ -1,4 +1,4 @@
-# Serve ML Models on Kubernetes using Bodywork
+# Serve ML Models on Kubernetes with Bodywork
 
 ![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/serve_model.png)
 
