@@ -2,11 +2,11 @@
 
 ![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/serve_model.png)
 
-This repository contains a Bodywork project that demonstrates how to deploy a machine learning service on Kubernetes (k8s), with Bodywork. To run this project, follow the steps below.
+This repository contains a Bodywork project that demonstrates how to deploy a machine learning service on Kubernetes, with Bodywork. To run this project, follow the steps below.
 
 ## Get Access to a Kubernetes Cluster
 
-In order to run this example project you will need access to a k8s cluster. To setup a single-node test cluster on your local machine you can use [minikube](https://minikube.sigs.k8s.io/docs/) or [docker-for-desktop](https://www.docker.com/products/docker-desktop). Check your access to k8s by running,
+In order to run this example project you will need access to a Kubernetes cluster. To setup a single-node test cluster on your local machine we recommend [minikube](https://minikube.sigs.Kubernetes.io/docs/). Check your access to Kubernetes by running,
 
 ```shell
 $ kubectl cluster-info
@@ -28,7 +28,7 @@ $ bodywork setup-namespace scoring-service
 
 ## Deploy the Service
 
-To test the service-deployment workflow, using a workflow-controller running on your local machine and interacting with your k8s cluster, run,
+To test the service-deployment workflow, using a workflow-controller running on your local machine and interacting with your Kubernetes cluster, run,
 
 ```shell
 $ bodywork workflow \
@@ -41,7 +41,7 @@ The workflow-controller logs will be streamed to your shell's standard output un
 
 ## Testing the Service
 
-Service deployments are accessible via HTTP from within the cluster - they are not exposed to the public internet. To test a service from your local machine you will first of all need to start a proxy server to enable access to your cluster. This can be achieved by issuing the following command,
+Service deployments are accessible via HTTP from within the cluster - they are not exposed to the public internet, unless you have [installed an ingress controller](https://bodywork.readthedocs.io/en/latest/kubernetes/#configuring-ingress) in your cluster. The simplest way to test a service from your local machine, is by using a local proxy server to enable access to your cluster. This can be achieved by issuing the following command,
 
 ```shell
 $ kubectl proxy
@@ -67,6 +67,17 @@ Should return,
 ```
 
 According to how the payload has been defined in the `scoring-service/serve.py` module.
+
+If an ingress controller is operational in your cluster, then the service can be tested via the public internet using,
+
+```shell
+$ curl http://YOUR_CLUSTERS_EXTERNAL_IP/scoring-service/bodywork-serve-model-project--scoring-service/iris/v1/score \
+    --request POST \
+    --header "Content-Type: application/json" \
+    --data '{"sepal_length": 5.1, "sepal_width": 3.5, "petal_length": 1.4, "petal_width": 0.2}'
+```
+
+See [here](https://bodywork.readthedocs.io/en/latest/kubernetes/#connecting-to-the-cluster) for instruction on how to retrieve `YOUR_CLUSTERS_EXTERNAL_IP`.
 
 ## Cleaning Up
 

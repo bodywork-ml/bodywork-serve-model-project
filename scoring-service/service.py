@@ -27,7 +27,7 @@ from flask import Flask, jsonify, make_response, request, Response
 from joblib import load
 from sklearn.base import BaseEstimator
 
-MODEL_PATH = 'bodywork_project/scoring-service/classification_model.joblib'
+MODEL_PATH = 'classification_model.joblib'
 CLASS_TO_SPECIES_MAP = {0: 'setosa', 1: 'versicolor', 2: 'virginica'}
 
 app = Flask(__name__)
