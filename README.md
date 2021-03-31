@@ -1,6 +1,6 @@
 # Serve ML Models on Kubernetes with Bodywork
 
-![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/serve_model.png)
+![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/serve_model_qs.png)
 
 This repository contains a Bodywork project that demonstrates how to deploy a machine learning service on Kubernetes, with Bodywork. To run this project, follow the steps below.
 
