@@ -2,7 +2,7 @@
 
 ![bodywork](https://bodywork-media.s3.eu-west-2.amazonaws.com/serve_model_qs.png)
 
-This repository demonstrates how to deploy a ML prediction service service on Kubernetes, using Bodywork. For information on this demo, take a look [here](https://bodywork.readthedocs.io/en/latest/quickstart_batch_job/). To run this project, follow the steps below. If you are new to Kubernetes, then take a look at our [Kubernetes Quickstart Guide](https://bodywork.readthedocs.io/en/latest/kubernetes/#quickstart).
+This repository demonstrates how to deploy a ML prediction service service on Kubernetes, using Bodywork. For information on this demo, take a look [here](https://bodywork.readthedocs.io/en/latest/quickstart_serve_model/). To run this project, follow the steps below. If you are new to Kubernetes, then take a look at our [Kubernetes Quickstart Guide](https://bodywork.readthedocs.io/en/latest/kubernetes/#quickstart).
 
 ## Install Bodywork
 
