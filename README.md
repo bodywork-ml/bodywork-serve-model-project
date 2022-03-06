@@ -14,13 +14,13 @@ $ pip install bodywork
 
 ## Deploy the Service
 
-To deploy the service run,
+To deploy the service defined in this repository run,
 
 ```shell
 $ bodywork create deployment https://github.com/bodywork-ml/bodywork-serve-model-project
 ```
 
-The workflow-controller logs will be streamed to your shell's standard output until the service is successfully deployed.
+Logs will be streamed to your terminal until the job has been successfully completed.
 
 ## Make this Project Your Own
 
