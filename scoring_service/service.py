@@ -77,4 +77,5 @@ if __name__ == '__main__':
     model = load(MODEL_PATH)
     print(f'loaded model={model}')
     print(f'starting API server')
+    raise RuntimeError()
     app.run(host='0.0.0.0', port=5000)
