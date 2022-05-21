@@ -14,7 +14,7 @@ stages:
     cpu_request: 0.5
     memory_request_mb: 100
     service:
-      max_startup_time_seconds: 30
+      max_startup_time_seconds: 120
       replicas: 2
       port: 5000
       ingress: true
