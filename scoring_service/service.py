@@ -74,6 +74,7 @@ def model_predictions(features: np.ndarray) -> Dict[str, str]:
 
 
 if __name__ == '__main__':
+    raise RuntimeError("no")
     model = load(MODEL_PATH)
     print(f'loaded model={model}')
     print(f'starting API server')
